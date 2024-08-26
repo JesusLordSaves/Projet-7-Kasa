@@ -1,12 +1,23 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';  
+import Banner from './Banner';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Bienvenue sur Kasa !</h1>
-      <p>Ceci est ma première application React.</p>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />  
+          <Route path="/banner" element={<Banner/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
