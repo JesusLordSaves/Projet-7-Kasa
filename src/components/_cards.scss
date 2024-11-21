@@ -1,0 +1,41 @@
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+  
+    .card {
+      background-color: #f7585e;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: white;
+      text-align: center;
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Par exemple, pour trois colonnes */
+  
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; /* Pour une seule colonne sur mobile */
+    }
+  }
+
+  .card {
+    background-color: #f7585e;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+  }

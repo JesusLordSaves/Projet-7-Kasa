@@ -1,10 +1,12 @@
 import React from 'react';
+import Banner from './Banner';
+import Cards from './Cards';
 
 function Home() {
   return (
     <div>
-      <h1>Accueil</h1>
-      <p>Bienvenue sur la page d'accueil de Kasa.</p>
+      <Banner />
+      <Cards />
     </div>
   );
 }
