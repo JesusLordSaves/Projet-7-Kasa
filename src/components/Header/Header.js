@@ -1,7 +1,6 @@
 import React from 'react';
-import './header.scss';
 
-function Header() {
+export function Header() {
     return (
         <header className="header">
             {/* Contenu de l'en-tête */}
@@ -9,4 +8,3 @@ function Header() {
     );
 }
 
-export default Header;

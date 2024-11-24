@@ -1,4 +1,6 @@
-function Cards() {
+import React from 'react';
+
+export function Cards() {
     return (
       <div className="cards-container">
         {/* Exemple de carte */}

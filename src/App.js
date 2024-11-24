@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './Header';
-import Banner from './Banner';
-import Cards from './Cards';
-import Footer from './Footer';
-import About from './About'; // Import du composant About
-import '../assets/css/style.css';
+import { Header } from './components/Header/Header';
+import { Banner } from './components/Banner/Banner';
+import { Cards } from './components/Cards/Cards';
+import { Footer } from './components/Footer/Footer';
+import { About } from './components/About/About'; // Import du composant About
+import './css/style.css';
 
 function App() {
   return (

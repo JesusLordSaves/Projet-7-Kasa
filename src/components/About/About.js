@@ -1,7 +1,6 @@
 import React from 'react';
-import './about.scss'; // Assurez-vous de créer le fichier about.scss dans le même dossier
 
-function About() {
+export function About() {
   return (
     <div className="about">
       <h1>À Propos</h1>
@@ -17,4 +16,3 @@ function About() {
   );
 }
 
-export default About;
