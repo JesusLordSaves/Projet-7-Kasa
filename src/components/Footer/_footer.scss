@@ -1,15 +1,7 @@
 .footer {
-  background-color: black;
+  background: black;
+  color: white;
   text-align: center;
   padding: 20px;
-  padding-inline: 20px;
-  width: 100px;
- 
-  .logofooter{
-    margin-bottom: 10px;
-  }
-  .footertext{
-    color: none;
-  }
-  
+  font-size: 0.9rem;
 }

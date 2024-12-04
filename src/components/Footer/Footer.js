@@ -1,13 +1,11 @@
-import React from 'react';
+import './footer.scss';
 
 export function Footer() {
   return (
-    <div className='footer'>
-        <div className='logofooter'>
-        
-        </div>
-        <div className='footertext'>©2020 Kasa. All right reserved.</div>
-    </div>
-  )
+    <footer className="footer">
+      <p>© 2020 Kasa. All rights reserved</p>
+    </footer>
+  );
 }
 
+export default Footer;

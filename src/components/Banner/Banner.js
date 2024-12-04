@@ -1,10 +1,17 @@
-import React from 'react';
+import './banner.scss';
 
 export function Banner() {
   return (
-    <div className="banner">
+    <section className="banner">
+      <img 
+        className="banner-image" 
+        src="../images/banner-image.JPG" 
+        alt="Bannière accueil" 
+      />
       <h1>Chez vous, partout et ailleurs</h1>
-    </div>
+    </section>
   );
 }
+
+export default Banner;
 
