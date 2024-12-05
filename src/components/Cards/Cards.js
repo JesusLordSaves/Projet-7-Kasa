@@ -3,7 +3,7 @@ import logements from '../../logements.json';
 
 export function Cards() {
   return (
-    <section className="cards">
+    <section className="cards-container">
       {logements.map((logement) => (
         <div className="card" key={logement.id}>
           <img src={logement.cover} alt={logement.title} className="card-image" />

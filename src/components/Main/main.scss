@@ -1,4 +1,8 @@
-@import '../components/banner';
-@import '../components/cards';
-@import '../components/footer';
-@import '../components/header';
+// Breakpoints
+$mobile-min: 335px;
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1023px;
+$desktop-min: 1024px;
+$desktop-max: 1439px;
+

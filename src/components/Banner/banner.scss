@@ -1,17 +1,14 @@
 .banner {
   position: relative;
   width: 100%;
-  height: 300px;
-
-  .banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  height: 100px;
+  margin: 0 auto;
+  max-width: 91%; 
+  border-radius: 27px;
 
   h1 {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;

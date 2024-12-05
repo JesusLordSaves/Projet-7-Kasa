@@ -1,3 +1,5 @@
+@import '../Main/main.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -12,10 +14,13 @@
   }
 
   nav {
+    display: flex;
+    gap: 10px; /* Espacement entre les liens */
     a {
       margin-left: 20px;
-      color: black;
+      color: red;
       text-decoration: none;
+      
     }
   }
 }
