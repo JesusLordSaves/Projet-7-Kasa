@@ -10,6 +10,10 @@
   max-width: 1200px; // Largeur maximale du conteneur
   width: 100%; // S'adapte à l'écran
   box-sizing: border-box; // Inclut le padding dans la largeur totale
+  .card-link {
+    text-decoration: none; // Supprime le soulignement du lien
+    color: inherit; // Garde la couleur d'origine
+  }
 
   // Mobile (335px à 767px)
   @media (min-width: 335px) and (max-width: 767px) {

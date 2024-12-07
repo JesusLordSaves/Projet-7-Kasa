@@ -1,0 +1,187 @@
+.carrousel-container {
+    .carrousel {
+      position: relative;
+      max-width: 1200px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+  
+      .carrousel-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+  
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+  
+        .arrow-icon {
+          width: 60px;
+          height: 90px;
+        }
+      }
+  
+      .prev {
+        left: 15px;
+      }
+  
+      .next {
+        right: 15px;
+      }
+  
+      .carrousel-indicator {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+  
+    .logement-info {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+  
+      .logement-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        .logement-title {
+          h1 {
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            color: #ff6060;
+            font-weight: 500;
+          }
+  
+          .location {
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            color: #ff6060;
+          }
+  
+          .tags {
+            display: flex;
+            gap: 10px;
+  
+            .tag {
+              background-color: #ff6060;
+              color: white;
+              padding: 5px 10px;
+              border-radius: 5px;
+            }
+          }
+        }
+  
+        .logement-host {
+          display: flex;
+          align-items: center;
+  
+          .host-name {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: #ff6060;
+            text-align: right; /* Alignement */
+            white-space: normal; /* Texte sur plusieurs lignes */
+          }
+  
+          .host-picture {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+        }
+      }
+  
+      .rating {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px; /* Espacement entre les étoiles */
+        margin-top: -50px;
+  
+        .star {
+          font-size: 2.5rem;
+          color: #E3E3E3;
+  
+          &.filled {
+            color: #ff6060;
+          }
+        }
+      }
+  
+      .logement-details {
+        margin-top: 20px;
+  
+        .details-container {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px; /* Espacement entre Description et Équipements */
+          margin-top: 20px;
+  
+          .accordion {
+            flex: 1;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+            .accordion-title {
+              background-color: #ff6060;
+              color: white;
+              font-size: 1.2rem;
+              font-weight: bold;
+              padding: 15px;
+              border-radius: 5px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              cursor: pointer;
+  
+              .arrow {
+                width: 12px;
+                height: 12px;
+                border-right: 2px solid white;
+                border-bottom: 2px solid white;
+                transform: rotate(222deg); /* Par défaut, pointe vers le haut */
+                transition: transform 0.7s ease;
+              }
+  
+              .arrow.open {
+                transform: rotate(45deg); /* Pointe vers le bas quand actif */
+              }
+            }
+  
+            .accordion-content {
+              font-size: 1rem;
+              line-height: 1.5;
+              color: #333;
+              padding: 15px;
+              background-color: #ffffff;
+              border-radius: 5px;
+              margin-top: 10px;
+  
+              ul {
+                padding-left: 20px;
+                list-style-type: disc;
+              }
+  
+              li {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

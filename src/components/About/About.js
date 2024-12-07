@@ -40,27 +40,32 @@ export function About() {
       <div className="about-banner"></div>
       <div className="accordion">
         {accordionItems.map((item, index) => (
-          <div
-            className={`accordion-item ${openSections.includes(index) ? "active" : ""}`}
+          <AccordionItem
             key={index}
-          >
-            <div
-              className="accordion-title"
-              onClick={() => toggleAccordion(index)}
-            >
-              {item.title}
-              <span
-                className={`arrow ${openSections.includes(index) ? "down" : "up"}`}
-              >
-              </span>
-            </div>
-            {openSections.includes(index) && (
-              <div className="accordion-content">{item.content}</div>
-            )}
-          </div>
+            title={item.title}
+            content={item.content}
+            isOpen={openSections.includes(index)}
+            toggle={() => toggleAccordion(index)}
+          />
         ))}
       </div>
     </section>
+  );
+}
+
+function AccordionItem({ title, content, isOpen, toggle }) {
+  return (
+    <div className={`accordion-item ${isOpen ? "active" : ""}`}>
+      <div className="accordion-title" onClick={toggle}>
+        {title}
+        <span className={`arrow ${isOpen ? "down" : "up"}`}></span>
+      </div>
+      {isOpen && (
+        <div className="accordion-content-container">
+          <div className="accordion-content">{content}</div>
+        </div>
+      )}
+    </div>
   );
 }
 
