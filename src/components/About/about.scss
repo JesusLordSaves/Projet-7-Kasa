@@ -5,7 +5,7 @@
 
   .about-banner {
     position: relative;
-    height: 95px;
+    height: 125px;
     margin: 0 auto;
     max-width: 100%;
     border-radius: 11px;
@@ -20,21 +20,26 @@
 
   .accordion {
     .accordion-item {
-      background: #ff6060; /* Couleur des items */
+      background: transparent; /* Fond transparent */
       border-radius: 8px;
       margin-bottom: 15px;
       overflow: hidden;
       transition: all 0.3s ease;
-
+      padding-left: 100px;
       .accordion-title {
-        padding: 15px 20px;
-        font-size: 1rem;
-        font-weight: bold;
+        background-color: #ff6060; /* Couleur de l'en-tête */
         color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 15px 20px;
+        border-radius: 8px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        width: 86%;
         cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajout d'ombre */
 
         .arrow {
           width: 12px;
@@ -42,52 +47,56 @@
           border-right: 2px solid white;
           border-bottom: 2px solid white;
           transform: rotate(222deg); /* Par défaut, pointe vers le haut */
-          transition: transform 0.7s ease;
+          transition: transform 0.3s ease;
         }
-      }
 
-      &.active {
-        .accordion-title .arrow {
+        /* Rotation de la flèche lorsque l'accordion est actif */
+        .arrow.open {
           transform: rotate(45deg); /* Pointe vers le bas quand actif */
         }
       }
+
+      /* Conteneur du contenu de l'accordion */
+      .accordion-content-container {
+        padding: 20px;
+        background: #f7f7f7; /* Fond gris */
+        color: #ff6060; /* Texte rouge */
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 15px; /* Coins arrondis */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+        border-top: 1px solid #f7f7f7; /* Bordure gris clair */
+        margin-top: 1px; /* Espacement avec le titre */
+        display: none; /* Par défaut, caché */
+        font-family: 'Montserrat', sans-serif;
+        width: 86%;
+      }
+
+      /* Affiche le contenu de l'accordion quand actif */
+      &.active {
+        .accordion-content-container {
+          display: block; /* Afficher le contenu quand actif */
+        }
+      }
     }
   }
 
-    .accordion-content-container {
-      padding: 20px;
-      background: #f7f7f7; /* Fond gris */
-      color: #ff6060; /* Texte rouge */
+  /* Media Queries pour les tailles d'écran */
+  @media (min-width: 335px) and (max-width: 375px) {
+    .about .accordion .accordion-item {
       font-size: 0.9rem;
-      line-height: 1.5;
-      border-radius: 10px; /* Coins arrondis */
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-      border-top: 1px solid #f7f7f7; /* Bordure gris clair */
-      display: none; /* Par défaut, caché */
-      width: 98%; /* Par exemple, 90% de la largeur du parent */
     }
+  }
 
-    .accordion-item.active .accordion-content-container {
-      display: block; /* Afficher le contenu quand actif */
+  @media (min-width: 376px) and (max-width: 1023px) {
+    .about .accordion .accordion-item {
+      font-size: 1rem;
     }
-  
-}
-
-/* Media Queries */
-@media (min-width: 335px) and (max-width: 375px) {
-  .about .accordion .accordion-item {
-    font-size: 0.9rem;
   }
-}
 
-@media (min-width: 376px) and (max-width: 1023px) {
-  .about .accordion .accordion-item {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .about .accordion .accordion-item {
-    font-size: 1.1rem;
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    .about .accordion .accordion-item {
+      font-size: 1.1rem;
+    }
   }
 }

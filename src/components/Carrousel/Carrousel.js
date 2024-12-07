@@ -2,13 +2,15 @@ import { useParams } from 'react-router-dom';
 import logements from '../../logements.json';
 import { useState } from 'react';
 import './carrousel.scss';
-import arrowLeft from '../../images/arrow_left.png'; // Import de l'image flèche gauche
-import arrowRight from '../../images/arrow_right.png'; // Import de l'image flèche droite
+import arrowLeft from '../../images/arrow_left.png';
+import arrowRight from '../../images/arrow_right.png';
 
 export function Carrousel() {
   const { id } = useParams();
   const logement = logements.find((logement) => logement.id === id);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDescriptionOpen, setDescriptionOpen] = useState(false);
+  const [isEquipmentsOpen, setEquipmentsOpen] = useState(false);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -82,26 +84,41 @@ export function Carrousel() {
           ))}
         </div>
 
-        {/* Description et équipements */}
+        {/* Description et Équipements */}
         <div className="logement-details">
           <div className="details-container">
+            {/* Description Accordion */}
             <div className="accordion">
-              <div className="accordion-item">
-                <div className="accordion-title">Description</div>
-                <div className="accordion-content">{logement.description}</div>
+              <div
+                className="accordion-title"
+                onClick={() => setDescriptionOpen(!isDescriptionOpen)}
+              >
+                Description
+                <span className={`arrow ${isDescriptionOpen ? 'open' : ''}`}></span>
               </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <div className="accordion-title">Équipements</div>
-                <div className="accordion-content">
-                  <ul>
-                    {logement.equipments.map((equipment, index) => (
-                      <li key={index}>{equipment}</li>
-                    ))}
-                  </ul>
+              {isDescriptionOpen && (
+                <div className="accordion-content-description">
+                  {logement.description}
                 </div>
+              )}
+            </div>
+
+            {/* Equipments Accordion */}
+            <div className="accordion">
+              <div
+                className="accordion-title"
+                onClick={() => setEquipmentsOpen(!isEquipmentsOpen)}
+              >
+                Équipements
+                <span className={`arrow ${isEquipmentsOpen ? 'open' : ''}`}></span>
               </div>
+              {isEquipmentsOpen && (
+                <div className="accordion-content-equipments">
+                  {logement.equipments.map((equipment, index) => (
+                    <p key={index}>{equipment}</p>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

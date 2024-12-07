@@ -58,7 +58,7 @@ function AccordionItem({ title, content, isOpen, toggle }) {
     <div className={`accordion-item ${isOpen ? "active" : ""}`}>
       <div className="accordion-title" onClick={toggle}>
         {title}
-        <span className={`arrow ${isOpen ? "down" : "up"}`}></span>
+        <span className={`arrow ${isOpen ? "open" : ""}`}></span>
       </div>
       {isOpen && (
         <div className="accordion-content-container">
